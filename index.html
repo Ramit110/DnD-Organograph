@@ -4,6 +4,20 @@
         <link rel="stylesheet" href="../Bootstrap/main.css">
         <link rel="stylesheet" href="../Bootstrap/css/bootstrap.min.css">
         <script src="../Bootstrap/js/bootstrap.bundle.js"></script>
+        <script>
+            d3.csv(`${window.location.origin}/dnd_organograph/organisations/guild.csv`)
+                .then((data) => {
+                    new d3.OrgChart().container('.organographs_guild').data(data).render();
+                });
+            d3.csv(`${window.location.origin}/dnd_organograph/organisations/shrade.csv`)
+                .then((data) => {
+                    new d3.OrgChart().container('.organographs_shrade').data(data).render();
+                });
+            d3.csv(`${window.location.origin}/dnd_organograph/organisations/shakakakakakakakakakakakaklaalalalalalla.csv`)
+                .then((data) => {
+                    new d3.OrgChart().container('.organographs_shakakakakakakakakakakakaklaalalalalalla').data(data).render();
+                });
+          </script>
         <title>DnD Organographs</title>
     </head>
     <body>
@@ -29,7 +43,9 @@
                     </p>
                 </div>
 
-                <div id="organographs"></div>
+                <div id="organographs_guild"></div>
+                <div id="organographs_shrade"></div>
+                <div id="organographs_shakakakakakakakakakakakaklaalalalalalla"></div>
             </div>
         </main>
     </body>
