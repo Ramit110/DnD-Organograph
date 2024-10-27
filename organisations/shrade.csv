@@ -1,5 +1,5 @@
 id,parent_id,name,role,description,character_sheet
-1,,White Fatalis,Founder of Shrade / Head of the Board of Elder Dragons,Incredibly old and a retired ex-CEO/founder of Shrade, definitely racist. Cannonically the Fatalis that destroyed Shrade. Current location is "retired and relaxing on an island".,
-2,,Safi'Jhivha,Member of the Board,Unhinged and angry at the sapphire constellation for infanticide,
-3,,Alatreon,Member of the Board,...,
-4,1/2/3,Fatalis,CEO of Shrade Incorporated,...,
+1,4,White Fatalis,Founder of Shrade / Head of the Board of Elder Dragons,Incredibly old and a retired ex-CEO/founder of Shrade, definitely racist. Cannonically the Fatalis that destroyed Shrade. Current location is "retired and relaxing on an island".,
+2,1,Safi'Jhivha,Member of the Board,Unhinged and angry at the sapphire constellation for infanticide,
+3,1,Alatreon,Member of the Board,...,
+4,,Fatalis,Current CEO of Shrade Incorporated,..., 
