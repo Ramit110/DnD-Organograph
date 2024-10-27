@@ -36,18 +36,27 @@
                 <div class="organographs_shrade"></div>
                 <div class="organographs_shakakakakakakakakakakakaklaalalalalalla"></div>
                 <script>
-                    d3.csv(`${window.location.origin}/dnd_organograph/organisations/guild.csv`)
-                        .then((data) => {
-                            chart = new d3.OrgChart().container('.organographs_guild').data(data).render();
-                        });
-                    d3.csv(`${window.location.origin}/dnd_organograph/organisations/shrade.csv`)
-                        .then((data) => {
-                            chart = new d3.OrgChart().container('.organographs_shrade').data(data).render();
-                        });
-                    d3.csv(`${window.location.origin}/dnd_organograph/organisations/shakakakakakakakakakakakaklaalalalalalla.csv`)
-                        .then((data) => {
-                            chart = new d3.OrgChart().container('.organographs_shakakakakakakakakakakakaklaalalalalalla').data(data).render();
-                        });
+                    d3.csv(`${window.location.origin}/dnd_organograph/organisations/guild.csv`).then((data) => {
+                        new d3.OrgChart().container('.organographs_guild').data(data).nodeContent((d, i, arr, state) => {
+                            const colors = ['#278B8D', '#404040', '#0C5C73', '#33C6CB'];
+                            const color = colors[d.depth % colors.length];
+                            return `
+                                <div style="background-color:${color}; position:absolute;margin-top:-1px; margin-left:-1px;width:${d.width}px;height:${d.height}px;border-radius:50px">
+                                    <div style="color:#fafafa;font-size:${d.depth < 2 ? 16 : 12}px;font-weight:bold;margin-left:70px;margin-top:15px">
+                                        ${d.depth < 2 ? d.data.name : (d.data.name || '').trim().split(/\s+/g)[0]}
+                                    </div>
+
+                                    <div style="color:#fafafa;margin-left:70px;margin-top:5px">
+                                        ${d.depth < 2 ? d.data.positionName : d.data.area}
+                                    </div>
+                                </div>`;}).render();
+                    });
+                    d3.csv(`${window.location.origin}/dnd_organograph/organisations/shrade.csv`).then((data) => {
+                        chart = new d3.OrgChart().container('.organographs_shrade').data(data).render();
+                    });
+                    d3.csv(`${window.location.origin}/dnd_organograph/organisations/shakakakakakakakakakakakaklaalalalalalla.csv`).then((data) => {
+                        chart = new d3.OrgChart().container('.organographs_shakakakakakakakakakakakaklaalalalalalla').data(data).render();
+                    });
                 </script>
             </div>
         </main>
