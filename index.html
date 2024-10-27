@@ -41,7 +41,7 @@
                             const colors = ['#278B8D', '#404040', '#0C5C73', '#33C6CB'];
                             const color = colors[d.depth % colors.length];
                             return `
-                                <div style="background-color:${color}; position:absolute; border-radius:50px; width:${d.width}px">
+                                <div style="background-color:${color}; position:absolute; border-radius:50px; height:${d.height}px; width:${d.width}px">
                                     <div style="margin: 10px 10px 10px 10px; text-align:center">
                                         <div style="color:#fafafa; font-weight:bold; margin-top:15px">
                                             ${(d.data.name || '').trim().split(/\s+/g)[0]}
@@ -55,10 +55,40 @@
                                 </div>`;}).render();
                     });
                     d3.csv(`${window.location.origin}/dnd_organograph/organisations/shrade.csv`).then((data) => {
-                        chart = new d3.OrgChart().container('.organographs_shrade').data(data).render();
+                        chart = new d3.OrgChart().container('.organographs_shrade').data(data).nodeContent((d, i, arr, state) => {
+                            const colors = ['#278B8D', '#404040', '#0C5C73', '#33C6CB'];
+                            const color = colors[d.depth % colors.length];
+                            return `
+                                <div style="background-color:${color}; position:absolute; border-radius:50px; height:${d.height}px; width:${d.width}px">
+                                    <div style="margin: 10px 10px 10px 10px; text-align:center">
+                                        <div style="color:#fafafa; font-weight:bold; margin-top:15px">
+                                            ${(d.data.name || '').trim().split(/\s+/g)[0]}
+                                        </div>
+                                        <div style="color:#fafafa; margin-top:5px">
+                                            ${d.data.role} <br />
+                                            ${d.data.description} <br />
+                                            ${d.data.character_sheet}
+                                        </div>
+                                    </div>
+                                </div>`;}).render();
                     });
                     d3.csv(`${window.location.origin}/dnd_organograph/organisations/shakakakakakakakakakakakaklaalalalalalla.csv`).then((data) => {
-                        chart = new d3.OrgChart().container('.organographs_shakakakakakakakakakakakaklaalalalalalla').data(data).render();
+                        chart = new d3.OrgChart().container('.organographs_shakakakakakakakakakakakaklaalalalalalla').data(data).nodeContent((d, i, arr, state) => {
+                            const colors = ['#278B8D', '#404040', '#0C5C73', '#33C6CB'];
+                            const color = colors[d.depth % colors.length];
+                            return `
+                                <div style="background-color:${color}; position:absolute; border-radius:50px; height:${d.height}px; width:${d.width}px">
+                                    <div style="margin: 10px 10px 10px 10px; text-align:center">
+                                        <div style="color:#fafafa; font-weight:bold; margin-top:15px">
+                                            ${(d.data.name || '').trim().split(/\s+/g)[0]}
+                                        </div>
+                                        <div style="color:#fafafa; margin-top:5px">
+                                            ${d.data.role} <br />
+                                            ${d.data.description} <br />
+                                            ${d.data.character_sheet}
+                                        </div>
+                                    </div>
+                                </div>`;}).render();
                     });
                 </script>
             </div>
