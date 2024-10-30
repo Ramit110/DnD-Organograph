@@ -37,7 +37,10 @@
                 <div class="organographs_shakakakakakakakakakakakaklaalalalalalla"></div>
                 <script>
                     const read_data = (d, i, arr, state) => { return `
-                        <div style="background-color:#${d.data.colour}; position:absolute; border-radius:50px; height:${d.height}px; width:${d.width}px">
+                        <div style="background-color:#${d.data.colour};
+                                    position:absolute; border-radius:50px;
+                                    height:${d.height}px; width:${d.width}px;
+                                    text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black, 1px 1px 0 black;">
                             <div style="margin: 10px 10px 10px 10px; text-align:center">
                                 <h3 style="font-weight:bold; margin-top:15px">
                                     ${d.data.name}
