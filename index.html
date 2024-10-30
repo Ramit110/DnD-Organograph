@@ -36,23 +36,22 @@
                 <div class="organographs_shrade"></div>
                 <div class="organographs_shakakakakakakakakakakakaklaalalalalalla"></div>
                 <script>
-                    const read_data = (d, i, arr, state) => {
-                        return `
-                            <div style="background-color:${d.data.colour}; position:absolute; border-radius:50px; height:${d.height}px; width:${d.width}px">
-                                <div style="margin: 10px 10px 10px 10px; text-align:center">
-                                    <h1 style="color:#fafafa; font-weight:bold; margin-top:15px">
-                                        ${d.data.name}
-                                    </h1>
-                                    <h2 style="color:#fafafa; margin-top:5px">
-                                        ${d.data.role} <br />
-                                    </h2>
-                                    <div style="color:#fafafa; margin-top:5px">
-                                        ${d.data.description} <br />
-                                        ${d.data.character_sheet}
-                                    </div>
+                    const read_data = (d, i, arr, state) => { return `
+                        <div style="background-color:${d.data.colour}; position:absolute; border-radius:50px; height:${d.height}px; width:${d.width}px">
+                            <div style="margin: 10px 10px 10px 10px; text-align:center">
+                                <h3 style="font-weight:bold; margin-top:15px">
+                                    ${d.data.name}
+                                </h3>
+                                <h4 style="margin-top:5px">
+                                    ${d.data.role} <br />
+                                </h4>
+                                <div>
+                                    ${d.data.description} <br />
+                                    ${d.data.character_sheet}
                                 </div>
-                            </div>`
-                    };
+                            </div>
+                        </div>
+                    `};
                     d3.csv(`${window.location.origin}/dnd_organograph/organisations/guild.csv`).then((data) => {
                         new d3.OrgChart().container('.organographs_guild').data(data).nodeContent(read_data).render();
                     });
